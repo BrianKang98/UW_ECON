@@ -1,0 +1,117 @@
+Do logit on training set
+
+Call:
+glm(formula = formula, family = "binomial", data = diabetic, 
+    subset = train)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.0240  -1.2210   0.8441   1.0317   2.4128  
+
+Coefficients:
+                               Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                   2.871e+00  3.300e+02   0.009 0.993060    
+raceAsian                     3.743e-01  9.840e-02   3.804 0.000142 ***
+raceCaucasian                -1.660e-02  2.001e-02  -0.830 0.406753    
+raceHispanic                  1.444e-01  5.715e-02   2.526 0.011536 *  
+raceOther                     2.261e-01  6.506e-02   3.475 0.000510 ***
+genderMale                    4.417e-02  1.561e-02   2.829 0.004671 ** 
+age10_20                     -8.267e-01  2.579e-01  -3.206 0.001348 ** 
+age20_30                     -6.874e-01  2.495e-01  -2.755 0.005865 ** 
+age30_40                     -7.421e-01  2.447e-01  -3.032 0.002427 ** 
+age40_50                     -7.961e-01  2.429e-01  -3.277 0.001047 ** 
+age50_60                     -8.114e-01  2.425e-01  -3.346 0.000819 ***
+age60_70                     -8.987e-01  2.424e-01  -3.708 0.000209 ***
+age70_80                     -9.362e-01  2.424e-01  -3.862 0.000112 ***
+age80_90                     -8.820e-01  2.427e-01  -3.635 0.000278 ***
+age90_100                    -5.559e-01  2.464e-01  -2.257 0.024029 *  
+time_in_hospital             -1.222e-02  3.037e-03  -4.024 5.71e-05 ***
+num_lab_procedures           -1.376e-03  4.414e-04  -3.118 0.001820 ** 
+num_procedures                3.998e-02  5.020e-03   7.965 1.66e-15 ***
+num_medications              -3.172e-04  1.317e-03  -0.241 0.809687    
+number_outpatient            -2.392e-01  1.742e-02 -13.731  < 2e-16 ***
+number_emergency             -2.685e-01  1.934e-02 -13.884  < 2e-16 ***
+number_inpatient             -4.011e-01  9.499e-03 -42.231  < 2e-16 ***
+number_diagnoses             -7.072e-02  4.411e-03 -16.033  < 2e-16 ***
+max_glu_serum>300            -2.177e-01  9.659e-02  -2.254 0.024193 *  
+max_glu_serumNone             1.955e-02  6.560e-02   0.298 0.765740    
+max_glu_serumNorm             1.282e-01  8.107e-02   1.581 0.113882    
+A1Cresult>8                  -9.200e-02  4.826e-02  -1.906 0.056602 .  
+A1CresultNone                -5.329e-02  4.070e-02  -1.309 0.190385    
+A1CresultNorm                 7.489e-02  5.217e-02   1.435 0.151150    
+metforminNo                  -6.302e-02  1.028e-01  -0.613 0.539903    
+metforminSteady               7.152e-02  1.028e-01   0.696 0.486480    
+metforminUp                   1.306e-01  1.255e-01   1.041 0.297969    
+repaglinideNo                 1.153e-01  3.456e-01   0.334 0.738736    
+repaglinideSteady            -1.255e-01  3.513e-01  -0.357 0.720977    
+repaglinideUp                 2.991e-01  4.163e-01   0.718 0.472485    
+nateglinideNo                -1.872e-01  6.570e-01  -0.285 0.775677    
+nateglinideSteady            -2.521e-01  6.633e-01  -0.380 0.703906    
+nateglinideUp                -1.297e-01  8.229e-01  -0.158 0.874745    
+chlorpropamideNo             -1.093e+01  1.970e+02  -0.055 0.955760    
+chlorpropamideSteady         -1.102e+01  1.970e+02  -0.056 0.955383    
+chlorpropamideUp             -2.273e+01  2.199e+02  -0.103 0.917686    
+glimepirideNo                 6.359e-02  1.769e-01   0.359 0.719291    
+glimepirideSteady             5.575e-02  1.791e-01   0.311 0.755565    
+glimepirideUp                 2.423e-01  2.199e-01   1.102 0.270551    
+glipizideNo                   1.494e-01  1.080e-01   1.382 0.166829    
+glipizideSteady               4.782e-02  1.081e-01   0.443 0.658101    
+glipizideUp                   3.082e-02  1.363e-01   0.226 0.821118    
+glyburideNo                   9.738e-02  1.041e-01   0.935 0.349738    
+glyburideSteady               6.429e-02  1.044e-01   0.616 0.538001    
+glyburideUp                   1.205e-01  1.314e-01   0.917 0.359055    
+pioglitazoneNo                3.473e-01  2.294e-01   1.514 0.129976    
+pioglitazoneSteady            2.739e-01  2.306e-01   1.188 0.235001    
+pioglitazoneUp                4.524e-02  2.761e-01   0.164 0.869868    
+rosiglitazoneNo              -4.764e-01  2.850e-01  -1.671 0.094648 .  
+rosiglitazoneSteady          -5.898e-01  2.862e-01  -2.061 0.039306 *  
+rosiglitazoneUp              -2.177e-01  3.388e-01  -0.643 0.520471    
+acarboseNo                    1.067e+01  1.970e+02   0.054 0.956794    
+acarboseSteady                1.037e+01  1.970e+02   0.053 0.958028    
+acarboseUp                    9.287e+00  1.970e+02   0.047 0.962393    
+miglitolNo                    1.093e+01  1.103e+02   0.099 0.921021    
+miglitolSteady                1.079e+01  1.103e+02   0.098 0.922084    
+miglitolUp                    2.313e+01  2.257e+02   0.102 0.918381    
+tolazamideSteady              5.755e-01  4.221e-01   1.363 0.172735    
+tolazamideUp                 -1.153e+01  1.970e+02  -0.059 0.953311    
+insulinNo                     1.309e-01  4.116e-02   3.179 0.001477 ** 
+insulinSteady                 2.232e-01  3.162e-02   7.058 1.69e-12 ***
+insulinUp                     7.435e-02  3.240e-02   2.295 0.021755 *  
+glyburide.metforminNo        -1.156e+01  1.384e+02  -0.084 0.933443    
+glyburide.metforminSteady    -1.167e+01  1.384e+02  -0.084 0.932823    
+glyburide.metforminUp        -1.071e+01  1.384e+02  -0.077 0.938332    
+glipizide.metforminSteady    -5.477e-01  6.600e-01  -0.830 0.406605    
+metformin.pioglitazoneSteady  1.090e+01  1.970e+02   0.055 0.955870    
+changeNo                     -2.583e-02  2.959e-02  -0.873 0.382670    
+diabetesMedYes               -2.813e-01  2.831e-02  -9.937  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 100993  on 73409  degrees of freedom
+Residual deviance:  96365  on 73336  degrees of freedom
+  (1742 observations deleted due to missingness)
+AIC: 96513
+
+Number of Fisher Scoring iterations: 10
+
+
+Predict using test set
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+ 0.0000  0.4870  0.5755  0.5516  0.6392  1.0000     452 
+
+MSE
+[1] 0.3941668
+
+Confusion matrix
+            
+logit.pred.1 FALSE TRUE
+       FALSE  3286 2218
+       TRUE   5188 8097
+
+Accuracy
+[1] 0.6058332
+
+NOTICE, sum of MSE and accuracy = 
+[1] 1

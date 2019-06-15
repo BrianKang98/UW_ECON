@@ -1,0 +1,62 @@
+Fit multinomial logistic neural net and get number of features
+    in model, probabilities, and effective DF
+
+# weights:  228 (150 variable)
+initial  value 80649.128111 
+iter  10 value 68791.634046
+iter  20 value 68361.773829
+iter  30 value 68139.598662
+iter  40 value 67256.600972
+iter  50 value 66691.445833
+iter  60 value 66432.318248
+iter  70 value 66202.732847
+iter  80 value 66043.533915
+iter  90 value 65995.649884
+iter 100 value 65964.331781
+final  value 65964.331781 
+stopped after 100 iterations
+
+[1] 75
+      <30                >30                NO          
+ Min.   :0.004494   Min.   :0.05597   Min.   :0.008356  
+ 1st Qu.:0.076149   1st Qu.:0.28270   1st Qu.:0.488833  
+ Median :0.094028   Median :0.32938   Median :0.575306  
+ Mean   :0.105448   Mean   :0.34346   Mean   :0.551095  
+ 3rd Qu.:0.121691   3rd Qu.:0.39125   3rd Qu.:0.637871  
+ Max.   :0.415550   Max.   :0.96748   Max.   :0.899200  
+[1] 148
+
+Confusion matrix
+Confusion Matrix and Statistics
+
+          Reference
+Prediction  <30  >30   NO
+       <30    0    0    0
+       >30  488 1453  950
+       NO  1483 4907 9056
+
+Overall Statistics
+                                          
+               Accuracy : 0.5731          
+                 95% CI : (0.5659, 0.5803)
+    No Information Rate : 0.5457          
+    P-Value [Acc > NIR] : 4.1e-14         
+                                          
+                  Kappa : 0.121           
+                                          
+ Mcnemar's Test P-Value : < 2e-16         
+
+Statistics by Class:
+
+                     Class: <30 Class: >30 Class: NO
+Sensitivity              0.0000    0.22846    0.9051
+Specificity              1.0000    0.87994    0.2330
+Pos Pred Value              NaN    0.50259    0.5863
+Neg Pred Value           0.8925    0.68231    0.6714
+Prevalence               0.1075    0.34684    0.5457
+Detection Rate           0.0000    0.07924    0.4939
+Detection Prevalence     0.0000    0.15766    0.8423
+Balanced Accuracy        0.5000    0.55420    0.5690
+
+MSE
+[1] 0.4268964

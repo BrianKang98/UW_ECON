@@ -1,0 +1,61 @@
+Look at first few most important variables
+                           Overall                 Variables
+chlorpropamideUp          4.965912          chlorpropamideUp
+miglitolUp                4.008221                miglitolUp
+nateglinideUp             3.957236             nateglinideUp
+miglitolSteady            3.852238            miglitolSteady
+glipizide.metforminSteady 2.905403 glipizide.metforminSteady
+tolazamideUp              2.859611              tolazamideUp
+
+Fit multinomial logistic neural net and get number of features
+    in model, probabilities, and effective DF
+# weights:  72 (46 variable)
+initial  value 82562.910718 
+iter  10 value 71352.520457
+iter  20 value 70110.276094
+iter  30 value 69758.372756
+iter  40 value 69752.485797
+final  value 69752.431522 
+converged
+[1] 23
+      <30                 >30                  NO           
+ Min.   :2.100e-07   Min.   :0.0000001   Min.   :0.0000001  
+ 1st Qu.:8.956e-02   1st Qu.:0.3282274   1st Qu.:0.5310456  
+ Median :1.061e-01   Median :0.3444211   Median :0.5494634  
+ Mean   :1.049e-01   Mean   :0.3406163   Mean   :0.5545020  
+ 3rd Qu.:1.154e-01   3rd Qu.:0.3535272   3rd Qu.:0.5822084  
+ Max.   :2.860e-01   Max.   :0.9999996   Max.   :0.9999980  
+[1] 46
+Confusion Matrix and Statistics
+
+          Reference
+Prediction   <30   >30    NO
+       <30     0     0     0
+       >30     4    26    22
+       NO   1999  6445 10293
+
+Overall Statistics
+                                          
+               Accuracy : 0.5492          
+                 95% CI : (0.5421, 0.5563)
+    No Information Rate : 0.549           
+    P-Value [Acc > NIR] : 0.4796          
+                                          
+                  Kappa : 0.0017          
+                                          
+ Mcnemar's Test P-Value : <2e-16          
+
+Statistics by Class:
+
+                     Class: <30 Class: >30 Class: NO
+Sensitivity              0.0000   0.004018   0.99787
+Specificity              1.0000   0.997889   0.00354
+Pos Pred Value              NaN   0.500000   0.54934
+Neg Pred Value           0.8934   0.656028   0.57692
+Prevalence               0.1066   0.344404   0.54899
+Detection Rate           0.0000   0.001384   0.54782
+Detection Prevalence     0.0000   0.002768   0.99723
+Balanced Accuracy        0.5000   0.500954   0.50070
+
+MSE
+[1] 0.4507957

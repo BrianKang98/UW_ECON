@@ -1,0 +1,12 @@
+ECON484: Advanced Machine Learning and Data Science for Econometricians
+Final Project
+
+USDiabetes: Complete
+	- Data in file "diabetic_data"
+	- File "IDs_mapping" is explanation of 3 variables related to qualitative ID's
+	- ICD-9-CM codes can be found online
+
+MEXBirth: Incomplete
+	- Error in data source. Access file is corrupt. Removed from current directory to allow Git push (data size too large).
+	- "SINAC_SDP_CatalogoVariables" are translated in file "Birth Catalog Translated"
+	- 

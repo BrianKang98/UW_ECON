@@ -1,0 +1,56 @@
+Do random forest on training set
+
+Call:
+ randomForest(formula = formula, data = diabetic.sub, mtry = 6,      importance = TRUE, subset = train) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 6
+
+        OOB estimate of  error rate: 38.89%
+Confusion matrix:
+      FALSE  TRUE class.error
+FALSE 13348 15531   0.5377956
+TRUE   9443 25900   0.2671816
+
+Confusion matrix using the test set
+          
+rf.predict FALSE  TRUE
+     FALSE  5616  3940
+     TRUE   6774 11195
+
+Accuracy
+[1] 0.6107539
+
+Calculate importance of the variables
+                             FALSE        TRUE MeanDecreaseAccuracy MeanDecreaseGini
+race                     4.6284285   7.4435099           8.74739671       835.918054
+gender                   3.1502932   1.7869977           3.58911239       659.026793
+age                      4.9244659  29.0625270          25.52790441      2014.824776
+time_in_hospital        -4.0617969  31.3605333          23.09593546      2314.993611
+num_lab_procedures     -11.2414670  34.2483927          19.59796832      4019.685069
+num_procedures          -2.6343842  34.2995860          25.10503325      1441.782356
+num_medications         -0.3902545  26.2530286          25.99414835      3283.299655
+number_outpatient        2.3758663  40.5651178          33.21641365       415.413304
+number_emergency         0.7802175  53.0933453          45.22694477       412.850035
+number_inpatient        70.9510170 103.3032669         112.52779742      1410.396966
+number_diagnoses        11.2153799  29.6881999          32.69286023      1550.073592
+max_glu_serum           -7.2050757  27.4410638          18.32469048       361.504021
+A1Cresult               -9.0345667  21.5179086          11.45422412       761.823169
+metformin               -8.6196178  19.3310203          10.77093243       551.282538
+repaglinide             -1.2862058   7.9108846           4.94820978       133.404901
+nateglinide              0.8536031  -0.4070501           0.30084491        73.151080
+chlorpropamide           2.3643441  -2.7800565          -0.34598861        12.662631
+glimepiride             -0.1840706   2.6918065           2.12508358       317.245198
+glipizide                1.1774832   5.7152612           6.97194293       499.344082
+glyburide                2.4058391   1.1793523           2.69463318       485.456669
+pioglitazone             0.8966737   0.8970810           1.39005299       355.601467
+rosiglitazone            2.7309728   6.7136552           9.09893790       316.217569
+acarbose                 0.1899245   2.8706574           2.19997618        31.243677
+miglitol                 0.1268356  -1.0914318          -0.57210057         3.732658
+tolazamide               1.1980305  -4.1086007          -2.22201171         5.852963
+insulin                 -8.8461944  26.3286609          21.35251220       967.721379
+glyburide.metformin     -0.6319962   0.4986783          -0.05217561        74.084428
+glipizide.metformin      0.4453654   0.5748033           0.70089943         1.863285
+metformin.pioglitazone   0.0000000   0.0000000           0.00000000         0.000000
+change                  -5.8175768  13.0138040          13.62706569       367.774503
+diabetesMed            -12.9584598  46.7028824          51.67921992       230.409146

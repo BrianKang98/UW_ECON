@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="libc4c41da3a84/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libc4c41da3a84/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="libc4c41da3a84/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libc4c41da3a84/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libc4c41da3a84/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libc4c41da3a84/kePrint-0.0.1/kePrint.js"></script>
+
+</head>
+<body style="background-color:white;">
+<table class="table table-striped table-condensed table-responsive" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">   </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> Coefficient </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> Std. Errors </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> Z stat </th>
+   <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"> P-value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> (Intercept) </td>
+   <td style="text-align:right;"> 2.1906063 </td>
+   <td style="text-align:right;"> 0.1754589 </td>
+   <td style="text-align:right;"> 1.248501e+01 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> raceAsian </td>
+   <td style="text-align:right;"> 0.2099470 </td>
+   <td style="text-align:right;"> 0.1610357 </td>
+   <td style="text-align:right;"> 1.303729e+00 </td>
+   <td style="text-align:right;"> 0.1923259 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> raceCaucasian </td>
+   <td style="text-align:right;"> 0.0067418 </td>
+   <td style="text-align:right;"> 0.0329541 </td>
+   <td style="text-align:right;"> 2.045802e-01 </td>
+   <td style="text-align:right;"> 0.8379001 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> raceHispanic </td>
+   <td style="text-align:right;"> 0.1100712 </td>
+   <td style="text-align:right;"> 0.0961043 </td>
+   <td style="text-align:right;"> 1.145331e+00 </td>
+   <td style="text-align:right;"> 0.2520721 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> raceOther </td>
+   <td style="text-align:right;"> 0.1712421 </td>
+   <td style="text-align:right;"> 0.1092426 </td>
+   <td style="text-align:right;"> 1.567540e+00 </td>
+   <td style="text-align:right;"> 0.1169885 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> genderMale </td>
+   <td style="text-align:right;"> 0.0061406 </td>
+   <td style="text-align:right;"> 0.0257279 </td>
+   <td style="text-align:right;"> 2.386740e-01 </td>
+   <td style="text-align:right;"> 0.8113584 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> genderUnknown/Invalid </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> NaN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age10_20 </td>
+   <td style="text-align:right;"> -0.4491377 </td>
+   <td style="text-align:right;"> 0.2117329 </td>
+   <td style="text-align:right;"> -2.121247e+00 </td>
+   <td style="text-align:right;"> 0.0339010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age20_30 </td>
+   <td style="text-align:right;"> -0.7366690 </td>
+   <td style="text-align:right;"> 0.1584687 </td>
+   <td style="text-align:right;"> -4.648671e+00 </td>
+   <td style="text-align:right;"> 0.0000033 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age30_40 </td>
+   <td style="text-align:right;"> -0.7287792 </td>
+   <td style="text-align:right;"> 0.1403726 </td>
+   <td style="text-align:right;"> -5.191749e+00 </td>
+   <td style="text-align:right;"> 0.0000002 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age40_50 </td>
+   <td style="text-align:right;"> -0.7355914 </td>
+   <td style="text-align:right;"> 0.1320669 </td>
+   <td style="text-align:right;"> -5.569841e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age50_60 </td>
+   <td style="text-align:right;"> -0.6832848 </td>
+   <td style="text-align:right;"> 0.1298147 </td>
+   <td style="text-align:right;"> -5.263537e+00 </td>
+   <td style="text-align:right;"> 0.0000001 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age60_70 </td>
+   <td style="text-align:right;"> -0.8719203 </td>
+   <td style="text-align:right;"> 0.1289007 </td>
+   <td style="text-align:right;"> -6.764279e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age70_80 </td>
+   <td style="text-align:right;"> -0.9612619 </td>
+   <td style="text-align:right;"> 0.1285371 </td>
+   <td style="text-align:right;"> -7.478475e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age80_90 </td>
+   <td style="text-align:right;"> -0.9060113 </td>
+   <td style="text-align:right;"> 0.1295762 </td>
+   <td style="text-align:right;"> -6.992112e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> age90_100 </td>
+   <td style="text-align:right;"> -0.6753556 </td>
+   <td style="text-align:right;"> 0.1438410 </td>
+   <td style="text-align:right;"> -4.695155e+00 </td>
+   <td style="text-align:right;"> 0.0000027 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> time_in_hospital </td>
+   <td style="text-align:right;"> -0.0250456 </td>
+   <td style="text-align:right;"> 0.0048179 </td>
+   <td style="text-align:right;"> -5.198478e+00 </td>
+   <td style="text-align:right;"> 0.0000002 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_lab_procedures </td>
+   <td style="text-align:right;"> -0.0005156 </td>
+   <td style="text-align:right;"> 0.0007291 </td>
+   <td style="text-align:right;"> -7.071690e-01 </td>
+   <td style="text-align:right;"> 0.4794614 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_procedures </td>
+   <td style="text-align:right;"> 0.0349853 </td>
+   <td style="text-align:right;"> 0.0083517 </td>
+   <td style="text-align:right;"> 4.188995e+00 </td>
+   <td style="text-align:right;"> 0.0000280 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_medications </td>
+   <td style="text-align:right;"> -0.0069885 </td>
+   <td style="text-align:right;"> 0.0021404 </td>
+   <td style="text-align:right;"> -3.265088e+00 </td>
+   <td style="text-align:right;"> 0.0010943 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> number_outpatient </td>
+   <td style="text-align:right;"> -0.1726264 </td>
+   <td style="text-align:right;"> 0.0274350 </td>
+   <td style="text-align:right;"> -6.292207e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> number_emergency </td>
+   <td style="text-align:right;"> -0.2442635 </td>
+   <td style="text-align:right;"> 0.0285152 </td>
+   <td style="text-align:right;"> -8.566088e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> number_inpatient </td>
+   <td style="text-align:right;"> -0.5012522 </td>
+   <td style="text-align:right;"> 0.0132749 </td>
+   <td style="text-align:right;"> -3.775949e+01 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> number_diagnoses </td>
+   <td style="text-align:right;"> -0.0644866 </td>
+   <td style="text-align:right;"> 0.0075081 </td>
+   <td style="text-align:right;"> -8.588917e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> max_glu_serum&gt;300 </td>
+   <td style="text-align:right;"> -0.1979917 </td>
+   <td style="text-align:right;"> 0.1509455 </td>
+   <td style="text-align:right;"> -1.311677e+00 </td>
+   <td style="text-align:right;"> 0.1896293 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> max_glu_serumNone </td>
+   <td style="text-align:right;"> 0.0193728 </td>
+   <td style="text-align:right;"> 0.1043635 </td>
+   <td style="text-align:right;"> 1.856283e-01 </td>
+   <td style="text-align:right;"> 0.8527363 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> max_glu_serumNorm </td>
+   <td style="text-align:right;"> 0.1512979 </td>
+   <td style="text-align:right;"> 0.1312109 </td>
+   <td style="text-align:right;"> 1.153090e+00 </td>
+   <td style="text-align:right;"> 0.2488735 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A1Cresult&gt;8 </td>
+   <td style="text-align:right;"> -0.0138816 </td>
+   <td style="text-align:right;"> 0.0819793 </td>
+   <td style="text-align:right;"> -1.693309e-01 </td>
+   <td style="text-align:right;"> 0.8655364 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A1CresultNone </td>
+   <td style="text-align:right;"> -0.0677218 </td>
+   <td style="text-align:right;"> 0.0685574 </td>
+   <td style="text-align:right;"> -9.878122e-01 </td>
+   <td style="text-align:right;"> 0.3232446 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A1CresultNorm </td>
+   <td style="text-align:right;"> 0.1042858 </td>
+   <td style="text-align:right;"> 0.0888174 </td>
+   <td style="text-align:right;"> 1.174160e+00 </td>
+   <td style="text-align:right;"> 0.2403311 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> metforminNo </td>
+   <td style="text-align:right;"> 0.1956174 </td>
+   <td style="text-align:right;"> 0.1554039 </td>
+   <td style="text-align:right;"> 1.258767e+00 </td>
+   <td style="text-align:right;"> 0.2081144 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> metforminSteady </td>
+   <td style="text-align:right;"> 0.4042579 </td>
+   <td style="text-align:right;"> 0.1557889 </td>
+   <td style="text-align:right;"> 2.594908e+00 </td>
+   <td style="text-align:right;"> 0.0094616 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> metforminUp </td>
+   <td style="text-align:right;"> 0.5863035 </td>
+   <td style="text-align:right;"> 0.2054547 </td>
+   <td style="text-align:right;"> 2.853687e+00 </td>
+   <td style="text-align:right;"> 0.0043215 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> repaglinideNo </td>
+   <td style="text-align:right;"> -0.1674867 </td>
+   <td style="text-align:right;"> 0.2120557 </td>
+   <td style="text-align:right;"> -7.898238e-01 </td>
+   <td style="text-align:right;"> 0.4296307 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> repaglinideSteady </td>
+   <td style="text-align:right;"> -0.3764659 </td>
+   <td style="text-align:right;"> 0.2243265 </td>
+   <td style="text-align:right;"> -1.678205e+00 </td>
+   <td style="text-align:right;"> 0.0933071 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> repaglinideUp </td>
+   <td style="text-align:right;"> -0.4327342 </td>
+   <td style="text-align:right;"> 0.2959034 </td>
+   <td style="text-align:right;"> -1.462417e+00 </td>
+   <td style="text-align:right;"> 0.1436270 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nateglinideNo </td>
+   <td style="text-align:right;"> -0.1658663 </td>
+   <td style="text-align:right;"> 0.1459682 </td>
+   <td style="text-align:right;"> -1.136318e+00 </td>
+   <td style="text-align:right;"> 0.2558234 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nateglinideSteady </td>
+   <td style="text-align:right;"> -0.2877297 </td>
+   <td style="text-align:right;"> 0.1600231 </td>
+   <td style="text-align:right;"> -1.798051e+00 </td>
+   <td style="text-align:right;"> 0.0721689 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nateglinideUp </td>
+   <td style="text-align:right;"> 1.7887993 </td>
+   <td style="text-align:right;"> 0.1913774 </td>
+   <td style="text-align:right;"> 9.346973e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> chlorpropamideNo </td>
+   <td style="text-align:right;"> 0.4526810 </td>
+   <td style="text-align:right;"> 0.2525695 </td>
+   <td style="text-align:right;"> 1.792302e+00 </td>
+   <td style="text-align:right;"> 0.0730845 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> chlorpropamideSteady </td>
+   <td style="text-align:right;"> 0.7904754 </td>
+   <td style="text-align:right;"> 0.2978744 </td>
+   <td style="text-align:right;"> 2.653721e+00 </td>
+   <td style="text-align:right;"> 0.0079610 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> chlorpropamideUp </td>
+   <td style="text-align:right;"> -2.0501618 </td>
+   <td style="text-align:right;"> 0.0022138 </td>
+   <td style="text-align:right;"> -9.260963e+02 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glimepirideNo </td>
+   <td style="text-align:right;"> 0.1890519 </td>
+   <td style="text-align:right;"> 0.2676173 </td>
+   <td style="text-align:right;"> 7.064264e-01 </td>
+   <td style="text-align:right;"> 0.4799230 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glimepirideSteady </td>
+   <td style="text-align:right;"> 0.3132057 </td>
+   <td style="text-align:right;"> 0.2723183 </td>
+   <td style="text-align:right;"> 1.150146e+00 </td>
+   <td style="text-align:right;"> 0.2500839 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glimepirideUp </td>
+   <td style="text-align:right;"> 0.2787105 </td>
+   <td style="text-align:right;"> 0.3390259 </td>
+   <td style="text-align:right;"> 8.220920e-01 </td>
+   <td style="text-align:right;"> 0.4110245 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glipizideNo </td>
+   <td style="text-align:right;"> 0.2572491 </td>
+   <td style="text-align:right;"> 0.1618317 </td>
+   <td style="text-align:right;"> 1.589609e+00 </td>
+   <td style="text-align:right;"> 0.1119230 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glipizideSteady </td>
+   <td style="text-align:right;"> 0.2126587 </td>
+   <td style="text-align:right;"> 0.1621615 </td>
+   <td style="text-align:right;"> 1.311400e+00 </td>
+   <td style="text-align:right;"> 0.1897225 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glipizideUp </td>
+   <td style="text-align:right;"> 0.1044072 </td>
+   <td style="text-align:right;"> 0.2072865 </td>
+   <td style="text-align:right;"> 5.036856e-01 </td>
+   <td style="text-align:right;"> 0.6144823 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glyburideNo </td>
+   <td style="text-align:right;"> -0.2630240 </td>
+   <td style="text-align:right;"> 0.1871265 </td>
+   <td style="text-align:right;"> -1.405595e+00 </td>
+   <td style="text-align:right;"> 0.1598445 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glyburideSteady </td>
+   <td style="text-align:right;"> -0.2877560 </td>
+   <td style="text-align:right;"> 0.1877490 </td>
+   <td style="text-align:right;"> -1.532663e+00 </td>
+   <td style="text-align:right;"> 0.1253589 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glyburideUp </td>
+   <td style="text-align:right;"> -0.1608161 </td>
+   <td style="text-align:right;"> 0.2313940 </td>
+   <td style="text-align:right;"> -6.949884e-01 </td>
+   <td style="text-align:right;"> 0.4870626 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> pioglitazoneNo </td>
+   <td style="text-align:right;"> 0.4505020 </td>
+   <td style="text-align:right;"> 0.3288555 </td>
+   <td style="text-align:right;"> 1.369909e+00 </td>
+   <td style="text-align:right;"> 0.1707154 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> pioglitazoneSteady </td>
+   <td style="text-align:right;"> 0.5236431 </td>
+   <td style="text-align:right;"> 0.3318718 </td>
+   <td style="text-align:right;"> 1.577848e+00 </td>
+   <td style="text-align:right;"> 0.1146006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> pioglitazoneUp </td>
+   <td style="text-align:right;"> 0.2972651 </td>
+   <td style="text-align:right;"> 0.4128296 </td>
+   <td style="text-align:right;"> 7.200675e-01 </td>
+   <td style="text-align:right;"> 0.4714835 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rosiglitazoneNo </td>
+   <td style="text-align:right;"> -0.5802478 </td>
+   <td style="text-align:right;"> 0.1893478 </td>
+   <td style="text-align:right;"> -3.064454e+00 </td>
+   <td style="text-align:right;"> 0.0021807 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rosiglitazoneSteady </td>
+   <td style="text-align:right;"> -0.6261159 </td>
+   <td style="text-align:right;"> 0.1933877 </td>
+   <td style="text-align:right;"> -3.237620e+00 </td>
+   <td style="text-align:right;"> 0.0012053 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rosiglitazoneUp </td>
+   <td style="text-align:right;"> -0.3518958 </td>
+   <td style="text-align:right;"> 0.2689932 </td>
+   <td style="text-align:right;"> -1.308196e+00 </td>
+   <td style="text-align:right;"> 0.1908069 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> acarboseNo </td>
+   <td style="text-align:right;"> 1.5721531 </td>
+   <td style="text-align:right;"> 0.1876412 </td>
+   <td style="text-align:right;"> 8.378508e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> acarboseSteady </td>
+   <td style="text-align:right;"> 1.4547695 </td>
+   <td style="text-align:right;"> 0.2080129 </td>
+   <td style="text-align:right;"> 6.993649e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> acarboseUp </td>
+   <td style="text-align:right;"> -0.1753267 </td>
+   <td style="text-align:right;"> 0.2799419 </td>
+   <td style="text-align:right;"> -6.262970e-01 </td>
+   <td style="text-align:right;"> 0.5311202 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> miglitolNo </td>
+   <td style="text-align:right;"> 0.0477720 </td>
+   <td style="text-align:right;"> 0.1699571 </td>
+   <td style="text-align:right;"> 2.810829e-01 </td>
+   <td style="text-align:right;"> 0.7786468 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> miglitolSteady </td>
+   <td style="text-align:right;"> 2.7660709 </td>
+   <td style="text-align:right;"> 0.1449722 </td>
+   <td style="text-align:right;"> 1.908001e+01 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> miglitolUp </td>
+   <td style="text-align:right;"> 2.2987747 </td>
+   <td style="text-align:right;"> 0.0078405 </td>
+   <td style="text-align:right;"> 2.931931e+02 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> tolazamideSteady </td>
+   <td style="text-align:right;"> 0.4302140 </td>
+   <td style="text-align:right;"> 0.2380355 </td>
+   <td style="text-align:right;"> 1.807352e+00 </td>
+   <td style="text-align:right;"> 0.0707074 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> tolazamideUp </td>
+   <td style="text-align:right;"> -1.1922273 </td>
+   <td style="text-align:right;"> 0.0000884 </td>
+   <td style="text-align:right;"> -1.348950e+04 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> insulinNo </td>
+   <td style="text-align:right;"> 0.2071053 </td>
+   <td style="text-align:right;"> 0.0671440 </td>
+   <td style="text-align:right;"> 3.084492e+00 </td>
+   <td style="text-align:right;"> 0.0020390 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> insulinSteady </td>
+   <td style="text-align:right;"> 0.2534112 </td>
+   <td style="text-align:right;"> 0.0506600 </td>
+   <td style="text-align:right;"> 5.002197e+00 </td>
+   <td style="text-align:right;"> 0.0000006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> insulinUp </td>
+   <td style="text-align:right;"> 0.1787057 </td>
+   <td style="text-align:right;"> 0.0508452 </td>
+   <td style="text-align:right;"> 3.514698e+00 </td>
+   <td style="text-align:right;"> 0.0004403 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glyburide.metforminNo </td>
+   <td style="text-align:right;"> -0.6522383 </td>
+   <td style="text-align:right;"> 0.2311176 </td>
+   <td style="text-align:right;"> -2.822106e+00 </td>
+   <td style="text-align:right;"> 0.0047709 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glyburide.metforminSteady </td>
+   <td style="text-align:right;"> -0.7723143 </td>
+   <td style="text-align:right;"> 0.2400165 </td>
+   <td style="text-align:right;"> -3.217755e+00 </td>
+   <td style="text-align:right;"> 0.0012920 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glyburide.metforminUp </td>
+   <td style="text-align:right;"> 0.2469468 </td>
+   <td style="text-align:right;"> 0.4314098 </td>
+   <td style="text-align:right;"> 5.724180e-01 </td>
+   <td style="text-align:right;"> 0.5670388 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> glipizide.metforminSteady </td>
+   <td style="text-align:right;"> 1.1486326 </td>
+   <td style="text-align:right;"> 0.3275940 </td>
+   <td style="text-align:right;"> 3.506269e+00 </td>
+   <td style="text-align:right;"> 0.0004544 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> metformin.pioglitazoneSteady </td>
+   <td style="text-align:right;"> 1.0753031 </td>
+   <td style="text-align:right;"> 0.0007786 </td>
+   <td style="text-align:right;"> 1.381033e+03 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> changeNo </td>
+   <td style="text-align:right;"> -0.0070628 </td>
+   <td style="text-align:right;"> 0.0486077 </td>
+   <td style="text-align:right;"> -1.453025e-01 </td>
+   <td style="text-align:right;"> 0.8844720 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> diabetesMedYes </td>
+   <td style="text-align:right;"> -0.2960503 </td>
+   <td style="text-align:right;"> 0.0475872 </td>
+   <td style="text-align:right;"> -6.221221e+00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+</tbody>
+</table>
+</body>
+</html>

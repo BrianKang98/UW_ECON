@@ -1,0 +1,36 @@
+Do boosting
+                                          var     rel.inf
+number_inpatient             number_inpatient 21.75878071
+age                                       age 12.36010246
+num_lab_procedures         num_lab_procedures 10.14851319
+num_medications               num_medications  8.29298172
+number_diagnoses             number_diagnoses  6.76682515
+time_in_hospital             time_in_hospital  5.30771716
+race                                     race  4.83601697
+num_procedures                 num_procedures  3.95956107
+insulin                               insulin  3.54441477
+number_emergency             number_emergency  3.52579776
+number_outpatient           number_outpatient  2.87797778
+max_glu_serum                   max_glu_serum  2.32475087
+A1Cresult                           A1Cresult  2.32310869
+metformin                           metformin  1.72937369
+diabetesMed                       diabetesMed  1.72220080
+glyburide                           glyburide  1.29364723
+glipizide                           glipizide  1.24217629
+rosiglitazone                   rosiglitazone  1.07453978
+glimepiride                       glimepiride  0.97885574
+gender                                 gender  0.78470464
+pioglitazone                     pioglitazone  0.77553551
+repaglinide                       repaglinide  0.72779240
+nateglinide                       nateglinide  0.32406589
+change                                 change  0.30248183
+glyburide.metformin       glyburide.metformin  0.29873755
+acarbose                             acarbose  0.25288221
+chlorpropamide                 chlorpropamide  0.24566728
+miglitol                             miglitol  0.14551590
+tolazamide                         tolazamide  0.07527494
+glipizide.metformin       glipizide.metformin  0.00000000
+metformin.pioglitazone metformin.pioglitazone  0.00000000
+
+Accuracy
+[1] 0.6229997

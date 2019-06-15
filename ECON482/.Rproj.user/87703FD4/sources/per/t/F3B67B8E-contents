@@ -1,0 +1,92 @@
+#####################################################
+########## ECON 482 LAB SESSION 2.06.2019 ###########
+############ Multivariate Regression ################
+#####################################################
+
+
+###############
+# Section 3.1 #
+###############
+
+## Section 3.1: Basic Multivariate Regression ---------------------------------
+# colGPA = beta0 + beta1*hsGPA + beta2*ACT + u
+library(foreign)
+gpa1 = read.dta("http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1.dta")
+
+reg1 <- lm(colGPA ~ hsGPA + ACT, data = gpa1)
+summary(reg1)
+
+
+
+###############
+# Section 3.2 #
+###############
+
+## Section 3.2: OLS in Matrix Form --------------------------------------------
+#betahat = solve(t(X)%*%X) %*% t(X)%*%y
+#uhat = y - X %*% betahat
+#sigma2hat = t(uhat) %*% uhat / (n-k-1)
+#Vbetahat = sigma2hat * solve ((t(X)%*%X)
+#se = sqrt(diag(Vbetahat))
+
+# loading the data
+library(foreign)
+gpa1 = read.dta("http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1.dta")
+
+# determine the sample size and number of independent variables
+n = nrow(gpa1)
+k = 2
+
+# extracting y
+y <- gpa1$colGPA
+
+# extracting X and adding column of 1s 
+X <- cbind(1, gpa1$hsGPA, gpa1$ACT)
+# x1 <- c(1, gpa1$hsGPA, gpa1$ACT)    this doesn't make a matrix
+
+
+
+# solving for beta1hat
+betahat = solve(t(X)%*%X) %*% t(X)%*%y    # matrix of 3 columns corresponding to B0, B1, B2
+# or just get values from doing lm()
+# i could also do summary(reg1)$coefficients[,1] to get the beta(s)
+
+# residuals, estimated var of u, SER
+
+
+
+
+# estimated var of betahat and SE
+
+
+
+###############
+# Section 4.1 #
+###############
+
+## Section 4.1.2: Standard Case------------------------------------------------
+# colGPA = beta0 + beta1*hsGPA + beta2*ACT + beta3*skipped + u
+
+# dataset
+library(foreign)
+gpa1 = read.dta("http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1.dta")
+
+# setting critical value alpha being 5%
+alpha = 0.05
+
+# finding the quantile in t-distribution
+
+
+
+# regression
+reg2 <- lm(colGPA~hsGPA+ACT+skipped, data = gpa1)
+summary(reg2)
+
+# manually confirming the formulas
+
+
+
+
+
+
+

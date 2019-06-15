@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549520330447.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3493518310",
+    "id" : "6E5C2BF9",
+    "lastKnownWriteTime" : 1550036258,
+    "last_content_update" : 1550036258326,
+    "path" : "~/ECON482/hw04.R",
+    "project_path" : "hw04.R",
+    "properties" : {
+        "cursorPosition" : "151,39",
+        "notebook_format" : "word_document",
+        "scrollLine" : "95",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

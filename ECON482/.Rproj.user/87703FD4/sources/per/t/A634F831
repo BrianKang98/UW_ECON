@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1550025935668.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2864756778",
+    "id" : "A634F831",
+    "lastKnownWriteTime" : 1548204978,
+    "last_content_update" : 1548204978,
+    "path" : "~/ECON482/hw01.R",
+    "project_path" : "hw01.R",
+    "properties" : {
+        "cursorPosition" : "16,36",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
