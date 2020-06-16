@@ -1,0 +1,24 @@
+
+First OLS regression output ONLY on the core interest vars: 
+
+Call:
+lm(formula = log(IncomePovertyRatio) ~ SameResidenceWorkplace + 
+    JWMNP, data = dat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.1453 -0.4460 -0.0440  0.3738  3.1943 
+
+Coefficients:
+                            Estimate Std. Error  t value Pr(>|t|)    
+(Intercept)                2.036e+00  8.283e-04 2458.314  < 2e-16 ***
+SameResidenceWorkplaceTRUE 9.392e-02  1.942e-02    4.837 1.32e-06 ***
+JWMNP                      3.411e-03  2.302e-05  148.190  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6306 on 1379245 degrees of freedom
+  (15943 observations deleted due to missingness)
+Multiple R-squared:  0.01573,	Adjusted R-squared:  0.01572 
+F-statistic: 1.102e+04 on 2 and 1379245 DF,  p-value: < 2.2e-16
+

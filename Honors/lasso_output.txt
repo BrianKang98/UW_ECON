@@ -1,0 +1,250 @@
+
+Summary of LASSO: 
+
+Call:
+rlasso.formula(formula = formula, data = data, post = post, intercept = intercept, 
+    model = model, control = control)
+
+Post-Lasso Estimation:  FALSE 
+
+Total number of variables: 250
+Number of selected variables: 103 
+
+Residuals: 
+      Min        1Q    Median        3Q       Max 
+-92.67302  -0.48111  -0.01726   0.55912  27.01928 
+
+            Estimate
+(Intercept)    4.324
+DIVISION6      0.016
+DIVISION7      0.002
+SPORDER       -0.557
+REGION2        0.001
+REGION3        0.010
+ST04           0.007
+ST08          -0.001
+ST12           0.009
+ST25          -0.017
+ST48           0.000
+ST50          -0.006
+PWGTP          0.000
+AGEP           0.003
+CIT3          -0.005
+CIT5           0.060
+COW2          -0.003
+COW3          -0.016
+COW4          -0.008
+COW6          -0.135
+FER1           0.012
+FER2           0.023
+GCL1          -0.156
+GCL2          -0.135
+GCM5          -0.006
+HINS12        -0.052
+HINS32        -0.301
+HINS42         0.133
+HINS52        -0.015
+HINS62         0.209
+HINS72         0.012
+JWMNP          0.000
+MAR2          -0.392
+MAR3          -0.256
+MAR4          -0.298
+MARHM2        -0.023
+MARHT2         0.009
+MIG3          -0.014
+NWAV3         -0.011
+NWLA3         -0.007
+OIP            0.000
+PAP            0.000
+RELP01        -1.843
+RELP02        -0.965
+RELP03        -0.762
+RELP04        -0.729
+RELP05        -1.091
+RELP06        -1.059
+RELP07        -0.664
+RELP08        -0.982
+RELP09        -0.895
+RELP10        -0.963
+RELP11        -1.162
+RELP12        -1.191
+RELP13        -1.370
+RELP15        -1.160
+RELP17        -0.335
+SCH2           0.008
+SCHG14         0.082
+SCHG15         0.005
+SCHG16        -0.004
+SCHL09         0.023
+SCHL11         0.015
+SCHL13         0.018
+SCHL14         0.032
+SCHL15         0.066
+SCHL16         0.022
+SCHL18        -0.010
+SCHL20        -0.003
+SEMP          -0.149
+SEX2          -0.013
+SSIP           0.000
+SSP            0.000
+WAGP          -0.149
+WKHP          -0.004
+WKW3           0.046
+WKW4           0.102
+WKW5           0.125
+WKW6           0.112
+WRK1           0.050
+ANC2          -0.022
+ANC4          -0.008
+DECADE2        0.048
+DECADE7        0.031
+DECADE8        0.112
+DIS2           0.034
+ESR4          -0.012
+HICOV2         0.138
+MSP2          -0.171
+NATIVITY2      0.007
+PAOC2          0.009
+PAOC4          0.041
+PERNP          0.149
+PINCP          0.000
+PRIVCOV2      -0.054
+PUBCOV2       -0.236
+QTRBIR2       -0.001
+RAC1P2        -0.027
+RC0            0.088
+SCIENGP2      -0.022
+SCIENGRLP1    -0.026
+SFN1          -0.387
+SFR2          -0.047
+SFR3           0.425
+
+Residual standard error: 1.424
+Multiple R-squared:  0.9841
+Adjusted R-squared:  0.9841
+How many variables to keep: 
+[1] 103
+
+Post-LASSO OLS Regression output: 
+
+Call:
+lm(formula = formula, data = dattemp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-92.323  -0.482  -0.015   0.568  26.917 
+
+Coefficients: (11 not defined because of singularities)
+                 Estimate Std. Error  t value Pr(>|t|)    
+(Intercept)     4.205e+00  3.639e-02  115.554  < 2e-16 ***
+DIVISION6TRUE   3.341e-02  7.148e-03    4.674 2.96e-06 ***
+DIVISION7TRUE   1.471e-02  8.850e-03    1.662 0.096555 .  
+SPORDER        -5.102e-01  3.890e-03 -131.174  < 2e-16 ***
+REGION2TRUE     1.302e-02  4.020e-03    3.238 0.001204 ** 
+REGION3TRUE     1.039e-02  4.725e-03    2.200 0.027823 *  
+ST04TRUE        3.158e-02  1.078e-02    2.930 0.003391 ** 
+ST08TRUE       -1.729e-02  1.092e-02   -1.583 0.113412    
+ST12TRUE        2.783e-02  7.117e-03    3.911 9.21e-05 ***
+ST25TRUE       -3.826e-02  9.951e-03   -3.845 0.000121 ***
+ST48TRUE        2.823e-03  9.366e-03    0.301 0.763129    
+ST50TRUE       -4.237e-02  3.080e-02   -1.376 0.168923    
+PWGTP          -8.990e-05  1.917e-05   -4.691 2.72e-06 ***
+AGEP            3.982e-03  2.000e-04   19.906  < 2e-16 ***
+CIT3TRUE       -4.542e-02  1.476e-02   -3.076 0.002096 ** 
+CIT5TRUE        7.255e-02  8.051e-03    9.011  < 2e-16 ***
+COW2TRUE       -1.438e-02  5.205e-03   -2.763 0.005731 ** 
+COW3TRUE       -2.364e-02  5.412e-03   -4.367 1.26e-05 ***
+COW4TRUE       -1.960e-02  6.584e-03   -2.977 0.002910 ** 
+COW6TRUE       -1.321e-01  7.140e-03  -18.499  < 2e-16 ***
+FER1TRUE        9.337e-02  1.446e-02    6.456 1.08e-10 ***
+FER2TRUE        7.017e-02  5.880e-03   11.935  < 2e-16 ***
+GCL1TRUE       -2.140e-01  1.218e-02  -17.578  < 2e-16 ***
+GCL2TRUE       -1.814e-01  6.963e-03  -26.051  < 2e-16 ***
+GCM5TRUE       -2.302e-02  2.292e-02   -1.004 0.315365    
+HINS12TRUE     -5.952e-02  5.203e-03  -11.439  < 2e-16 ***
+HINS32TRUE     -2.257e-01  1.433e-02  -15.742  < 2e-16 ***
+HINS42TRUE      1.929e-01  1.382e-02   13.956  < 2e-16 ***
+HINS52TRUE     -4.397e-02  1.024e-02   -4.294 1.76e-05 ***
+HINS62TRUE      3.034e-01  1.418e-02   21.398  < 2e-16 ***
+HINS72TRUE      3.545e-02  2.122e-02    1.670 0.094844 .  
+JWMNP          -2.891e-04  6.185e-05   -4.675 2.94e-06 ***
+MAR2TRUE       -4.096e-01  9.378e-03  -43.684  < 2e-16 ***
+MAR3TRUE       -2.586e-01  4.837e-03  -53.454  < 2e-16 ***
+MAR4TRUE       -3.086e-01  9.891e-03  -31.206  < 2e-16 ***
+MARHM2TRUE             NA         NA       NA       NA    
+MARHT2TRUE      1.668e-02  3.815e-03    4.372 1.23e-05 ***
+MIG3TRUE       -2.049e-02  4.978e-03   -4.116 3.85e-05 ***
+NWAV3TRUE      -6.834e-02  2.135e-02   -3.201 0.001369 ** 
+NWLA3TRUE      -2.435e-02  5.443e-03   -4.474 7.68e-06 ***
+OIP            -5.635e-06  5.153e-07  -10.933  < 2e-16 ***
+PAP            -2.867e-05  4.475e-06   -6.407 1.48e-10 ***
+RELP01TRUE     -1.903e+00  5.148e-03 -369.648  < 2e-16 ***
+RELP02TRUE     -1.070e+00  1.373e-02  -77.971  < 2e-16 ***
+RELP03TRUE     -1.071e+00  6.373e-02  -16.801  < 2e-16 ***
+RELP04TRUE     -9.403e-01  4.462e-02  -21.074  < 2e-16 ***
+RELP05TRUE     -1.240e+00  2.277e-02  -54.465  < 2e-16 ***
+RELP06TRUE     -1.238e+00  2.196e-02  -56.352  < 2e-16 ***
+RELP07TRUE     -9.612e-01  4.560e-02  -21.080  < 2e-16 ***
+RELP08TRUE     -1.318e+00  4.307e-02  -30.604  < 2e-16 ***
+RELP09TRUE     -1.148e+00  2.547e-02  -45.064  < 2e-16 ***
+RELP10TRUE     -1.184e+00  2.420e-02  -48.912  < 2e-16 ***
+RELP11TRUE     -1.363e+00  3.103e-02  -43.921  < 2e-16 ***
+RELP12TRUE     -1.338e+00  2.088e-02  -64.108  < 2e-16 ***
+RELP13TRUE     -1.492e+00  1.372e-02 -108.700  < 2e-16 ***
+RELP15TRUE     -1.350e+00  2.333e-02  -57.857  < 2e-16 ***
+RELP17TRUE     -4.254e-01  3.198e-02  -13.303  < 2e-16 ***
+SCH2TRUE        3.941e-02  1.601e-02    2.461 0.013858 *  
+SCHG14TRUE      1.553e-01  5.019e-02    3.094 0.001973 ** 
+SCHG15TRUE     -7.934e-03  1.587e-02   -0.500 0.617087    
+SCHG16TRUE     -4.042e-02  1.513e-02   -2.672 0.007550 ** 
+SCHL09TRUE             NA         NA       NA       NA    
+SCHL11TRUE             NA         NA       NA       NA    
+SCHL13TRUE             NA         NA       NA       NA    
+SCHL14TRUE             NA         NA       NA       NA    
+SCHL15TRUE             NA         NA       NA       NA    
+SCHL16TRUE             NA         NA       NA       NA    
+SCHL18TRUE             NA         NA       NA       NA    
+SCHL20TRUE             NA         NA       NA       NA    
+SEMP            6.773e-05  1.053e-07  643.445  < 2e-16 ***
+SEX2TRUE       -7.105e-02  8.507e-03   -8.352  < 2e-16 ***
+SSIP           -1.455e-05  2.055e-06   -7.081 1.43e-12 ***
+SSP             5.676e-06  4.594e-07   12.356  < 2e-16 ***
+WAGP            6.454e-05  8.293e-08  778.294  < 2e-16 ***
+WKHP           -3.437e-03  1.423e-04  -24.153  < 2e-16 ***
+WKW3TRUE        5.603e-02  6.843e-03    8.187 2.68e-16 ***
+WKW4TRUE        1.098e-01  8.232e-03   13.342  < 2e-16 ***
+WKW5TRUE        1.360e-01  1.131e-02   12.026  < 2e-16 ***
+WKW6TRUE        1.247e-01  1.153e-02   10.820  < 2e-16 ***
+WRK1TRUE        5.300e-02  6.821e-03    7.770 7.84e-15 ***
+ANC2TRUE       -2.895e-02  3.562e-03   -8.129 4.34e-16 ***
+ANC4TRUE       -1.583e-02  4.652e-03   -3.403 0.000667 ***
+DECADE2TRUE     1.281e-01  2.932e-02    4.369 1.25e-05 ***
+DECADE7TRUE     4.404e-02  8.442e-03    5.217 1.82e-07 ***
+DECADE8TRUE     1.229e-01  1.088e-02   11.297  < 2e-16 ***
+DIS2TRUE        5.066e-02  6.118e-03    8.281  < 2e-16 ***
+ESR4TRUE       -6.295e-02  2.132e-02   -2.953 0.003152 ** 
+HICOV2TRUE      1.679e-01  1.007e-02   16.678  < 2e-16 ***
+MSP2TRUE       -1.845e-01  9.556e-03  -19.306  < 2e-16 ***
+NATIVITY2TRUE   6.933e-03  5.483e-03    1.265 0.206048    
+PAOC2TRUE       3.558e-02  7.697e-03    4.623 3.79e-06 ***
+PAOC4TRUE       8.357e-02  7.733e-03   10.807  < 2e-16 ***
+PERNP                  NA         NA       NA       NA    
+PINCP           7.651e-05  7.705e-08  992.925  < 2e-16 ***
+PRIVCOV2TRUE   -7.261e-02  8.985e-03   -8.081 6.42e-16 ***
+PUBCOV2TRUE    -3.374e-01  1.460e-02  -23.108  < 2e-16 ***
+QTRBIR2TRUE    -8.179e-03  3.359e-03   -2.435 0.014898 *  
+RAC1P2TRUE     -3.158e-02  5.886e-03   -5.365 8.11e-08 ***
+RC0TRUE                NA         NA       NA       NA    
+SCIENGP2TRUE   -3.824e-02  3.740e-03  -10.224  < 2e-16 ***
+SCIENGRLP1TRUE -3.718e-02  7.436e-03   -5.000 5.73e-07 ***
+SFN1TRUE       -3.761e-01  2.015e-02  -18.663  < 2e-16 ***
+SFR2TRUE       -9.101e-02  2.510e-02   -3.626 0.000288 ***
+SFR3TRUE        5.012e-01  2.716e-02   18.457  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.424 on 976619 degrees of freedom
+Multiple R-squared:  0.9841,	Adjusted R-squared:  0.9841 
+F-statistic: 6.576e+05 on 92 and 976619 DF,  p-value: < 2.2e-16
+

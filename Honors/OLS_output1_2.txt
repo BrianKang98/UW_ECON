@@ -1,0 +1,25 @@
+
+First OLS regression output BUT with interaction term: 
+
+Call:
+lm(formula = log(IncomePovertyRatio) ~ SameResidenceWorkplace * 
+    JWMNP, data = dat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.1456 -0.4459 -0.0439  0.3738  3.1944 
+
+Coefficients:
+                                   Estimate Std. Error  t value Pr(>|t|)    
+(Intercept)                       2.036e+00  8.288e-04 2456.934  < 2e-16 ***
+SameResidenceWorkplaceTRUE        1.598e-01  3.304e-02    4.836 1.32e-06 ***
+JWMNP                             3.413e-03  2.304e-05  148.160  < 2e-16 ***
+SameResidenceWorkplaceTRUE:JWMNP -1.327e-03  5.387e-04   -2.464   0.0137 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6306 on 1379244 degrees of freedom
+  (15943 observations deleted due to missingness)
+Multiple R-squared:  0.01573,	Adjusted R-squared:  0.01573 
+F-statistic:  7348 on 3 and 1379244 DF,  p-value: < 2.2e-16
+

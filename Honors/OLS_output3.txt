@@ -1,0 +1,47 @@
+
+OLS regression output on core and secondary interest vars: 
+
+Call:
+lm(formula = log(IncomePovertyRatio) ~ SameResidenceWorkplace * 
+    JWMNP + JWTR * JWMNP + MIG, data = dat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.1477 -0.4388 -0.0446  0.3660  3.5568 
+
+Coefficients:
+                                   Estimate Std. Error  t value Pr(>|t|)    
+(Intercept)                       2.070e+00  9.015e-04 2296.029  < 2e-16 ***
+SameResidenceWorkplaceTRUE        1.619e-01  3.272e-02    4.949 7.48e-07 ***
+JWMNP                             3.201e-03  2.544e-05  125.813  < 2e-16 ***
+JWTR02                           -1.801e-01  6.702e-03  -26.867  < 2e-16 ***
+JWTR03                            2.215e-01  4.184e-02    5.293 1.20e-07 ***
+JWTR04                            4.390e-01  9.088e-03   48.307  < 2e-16 ***
+JWTR05                            5.813e-01  1.647e-02   35.288  < 2e-16 ***
+JWTR06                            6.405e-01  4.815e-02   13.301  < 2e-16 ***
+JWTR07                           -1.205e-01  1.875e-02   -6.426 1.31e-10 ***
+JWTR08                            1.105e-01  2.029e-02    5.446 5.17e-08 ***
+JWTR09                           -3.042e-02  1.141e-02   -2.666  0.00768 ** 
+JWTR10                           -2.388e-01  4.126e-03  -57.866  < 2e-16 ***
+JWTR12                           -1.823e-01  7.392e-03  -24.662  < 2e-16 ***
+MIG2                             -2.017e-01  8.438e-03  -23.906  < 2e-16 ***
+MIG3                             -1.410e-01  1.568e-03  -89.917  < 2e-16 ***
+SameResidenceWorkplaceTRUE:JWMNP -1.633e-03  5.340e-04   -3.059  0.00222 ** 
+JWMNP:JWTR02                     -1.319e-03  1.175e-04  -11.221  < 2e-16 ***
+JWMNP:JWTR03                     -4.571e-03  8.401e-04   -5.441 5.30e-08 ***
+JWMNP:JWTR04                     -6.347e-03  1.656e-04  -38.317  < 2e-16 ***
+JWMNP:JWTR05                     -2.062e-03  2.079e-04   -9.918  < 2e-16 ***
+JWMNP:JWTR06                     -3.261e-03  6.484e-04   -5.029 4.92e-07 ***
+JWMNP:JWTR07                     -9.742e-04  6.424e-04   -1.517  0.12937    
+JWMNP:JWTR08                     -5.647e-04  6.618e-04   -0.853  0.39349    
+JWMNP:JWTR09                      2.291e-03  4.242e-04    5.400 6.65e-08 ***
+JWMNP:JWTR10                     -4.332e-04  2.218e-04   -1.954  0.05076 .  
+JWMNP:JWTR12                      1.293e-03  1.319e-04    9.807  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6242 on 1379222 degrees of freedom
+  (15943 observations deleted due to missingness)
+Multiple R-squared:  0.03556,	Adjusted R-squared:  0.03554 
+F-statistic:  2034 on 25 and 1379222 DF,  p-value: < 2.2e-16
+

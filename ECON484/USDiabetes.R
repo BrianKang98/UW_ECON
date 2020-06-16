@@ -5,7 +5,7 @@
 
 # import data----------------------------------------------------
 rm(list = ls())  # reset working vars
-setwd("C:/Users/slexi/Documents/ECON484")  # set working directory
+setwd("C:/Users/slexi/Documents/UW_ECON/ECON484")  # set working directory
 temp <- read.csv("diabetic_data.csv", na.strings = "?")  # save temp data
 temp2 <- temp  # backup
 #temp <- temp2  # recover backup

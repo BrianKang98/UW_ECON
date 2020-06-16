@@ -1,0 +1,442 @@
+#load packages
+rm(list = ls())
+library(arules)
+library(arulesViz)
+library(ggplot2)
+library(reshape2)
+library(plyr)
+library(dplyr)
+library(tree)
+library(rpart)
+library(rpart.plot)
+library(rattle)
+library(doBy)
+library(caret)
+library(tidyr)
+library(stringr)
+library(glmnet)
+library(randomForest)
+library(readxl)
+library(tidyverse)
+library(waffle)
+library(ggthemes)
+library(qicharts)
+library(ggpubr)
+library(tibble)
+library(lubridate)
+
+
+
+#set up
+
+setwd("~/Desktop")
+
+df <- read.csv("online_retail.csv")
+temp <- df
+
+# delete NAs
+df <- df[-which(rowSums(is.na(df))!=0),]
+# define revenue
+df$Revenue <- df$Quantity * df$UnitPrice
+# delete one weird extreme point
+df <- df[-which(df$UnitPrice==max(df$UnitPrice)),]
+temp <- df
+
+
+# Brian
+# QUESTION 1: Get largest buyers
+# sort customer by revenue from individual transactions
+byRev <- df %>% group_by(CustomerID) %>% arrange(desc(Revenue))
+byRev <- byRev[, which(names(byRev) %in% c("CustomerID","Revenue"))]
+head(byRev)
+
+# sort customer by total revenue of customers
+byRev <- df %>% group_by(CustomerID) %>% 
+  summarise(Revenue = sum(Revenue)) %>% arrange(desc(Revenue))
+head(byRev)
+
+# top 4 buyers
+byRev[1:4,]
+percent <- sum(byRev$Revenue[1:4]) / sum(df$Revenue) * 100
+print(paste(c("Top 4: ",percent,"%"), collapse = ""))
+
+# top 10 buyers
+byRev[1:10,]
+percent <- sum(byRev$Revenue[1:10]) / sum(df$Revenue) * 100
+print(paste(c("Top 10: ",percent,"%"), collapse = ""))
+
+# RESULTS:
+# We observe that the top 4 biggest customers account for 10.3% of all revenue.
+# The top 10 customers account for 16.5% of all revenue.
+
+
+# Liam
+###
+#2: do customers buy in spurts or smooth/often?
+###
+Quantity <- c(df$Quantity)
+UnitPrice <- c(df$UnitPrice)
+
+#make revenue vector 
+df$revenue <- c(Quantity*UnitPrice)
+
+#plots of quantity sold and price over invoice date by week
+df$InvoiceDate <- as.POSIXct(df$InvoiceDate, format ="%m/%d/%Y")
+df$Week <- week(df$InvoiceDate)
+
+aggregate_revenue <- aggregate(revenue ~ Week, df, sum)
+
+ggplot(aggregate_revenue, aes(x=Week, y= revenue))  + geom_point(shape=18, color="blue") +
+  geom_smooth(method=lm,  linetype="dashed",
+              color="darkred", fill="blue")
+
+#by day of week
+df$day <- weekdays(as.Date(df$InvoiceDate))
+
+aggregate_revenue <- aggregate(revenue ~ day, df, sum)
+
+day <- c(unique(aggregate_revenue$day))
+
+barplot(aggregate_revenue$revenue, names.arg = day, las = 0, ylab = "Total Revenue", xlab = "Day of Week", col = c("magenta", "pink", "lightblue"))
+
+#by month
+df$month_sold <- month(as.POSIXct(df$InvoiceDate, format="%m"))
+
+
+aggregate_revenue <- aggregate(revenue ~ month_sold, df, sum)
+aggregate_revenue <- data.frame(aggregate_revenue)
+
+month <- c("Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.","Oct.", "Nov.", "Dec.")
+
+barplot(aggregate_revenue$revenue, names.arg = month, las = 0, ylab = "Total Revenue", xlab = "Month", col = c("magenta", "pink", "lightblue"))
+
+###
+#by hour of day
+###
+df2 <- read.csv("online_retail.csv")
+df2$Hours <- format(as.POSIXct(strptime(df2$InvoiceDate,"%d/%m/%Y %H:%M",tz="")) ,format = "%H")
+
+Quantity <- c(df2$Quantity)
+UnitPrice <- c(df2$UnitPrice)
+
+#make revenue vector 
+df2$revenue <- c(Quantity*UnitPrice)
+
+
+aggregate_revenue <- aggregate(revenue ~ Hours, df2, sum)
+aggregate_revenue <- data.frame(aggregate_revenue)
+
+names <- c("7am", "8am", "9am", "10am", "11am", "12am", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm")
+
+barplot(aggregate_revenue$revenue, names.arg = names, las = 0, ylab = "Total Revenue", xlab = "Hour of Day", col = c("magenta", "pink", "lightblue"), main = "Revenue by Hour of Day")
+
+
+# Brian
+# QUESTION 3: Get "widest" buyers
+# apply different functions on different columns
+summarise_at_fun <- function(variable, func, data){
+  data2 <- data %>%
+    summarise_at(vars(variable), funs(get(func)(.)))
+  return(data2)
+}
+
+byCountRev <- df %>% group_by(CustomerID)
+look_list <- list(n_distinct = "StockCode", sum = "Revenue")
+byCountRev <- map2(look_list, names(look_list), summarise_at_fun, data = byCountRev) %>%
+  reduce(left_join, by = "CustomerID")
+byCountRev <- byCountRev %>% arrange(desc(StockCode))
+head(byCountRev)
+
+# top 4 buyers & if they also is most diverse customer
+byCountRev[1:4,]
+which(table(c(pull(byRev[1:4,1]),pull(byCountRev[1:4,1]))) !=1)
+
+# top 10 buyers
+byCountRev[1:10,]
+which(table(c(pull(byRev[1:10,1]),pull(byCountRev[1:10,1]))) !=1)
+
+# RESULTS:
+# We observe that 1 of 4 biggest buyers also had the most diverse purchasing list.
+# Of the 10 biggest buyers, 3 were also the most diverse in shopping list. 
+
+
+# Brian & Liam
+# QUESTION 4: Top selling products
+byGood <- df %>% group_by(StockCode) %>% 
+  summarise(Revenue = sum(Revenue)) %>% arrange(desc(Revenue))
+head(byGood)
+
+# top 4 goods
+byGood[1:4,]
+top4rev <- sum(byGood$Revenue[1:4])
+totalrev <- sum(df$Revenue)
+percent <- top4rev / totalrev * 100
+print(paste(c("Top 4: ",percent,"%"), collapse = ""))
+# pie chart
+lbls = c(paste(c("$",top4rev), collapse = ""), paste(c("$",totalrev), collapse = ""))
+pie(c(top4rev, totalrev), labels = lbls, main = "Top 10 Sales Revenue Out of Total Sales Revenue", col = rainbow(2))
+legend("bottomleft", c("Top 10 Product Revenue", "Total Product Revenue"), cex = 0.8, fill = rainbow(2))
+# waffle chart
+#vals <- c(top4rev, totalrev)
+#val_names <- sprintf("%s (%s)", c("Top 4 Product Revenue", "Total Product Revenue"), scales::percent(round(vals/sum(vals), 2)))
+#names(vals) <- val_names
+#waffle(vals) + scale_fill_tableau(name=NULL)
+
+# top 10 goods
+byGood[1:10,]
+top10rev <- sum(byGood$Revenue[1:10])
+percent <- top10rev / totalrev * 100
+print(paste(c("Top 10: ",percent,"%"), collapse = ""))
+# pie chart
+lbls = c(paste(c("$",top10rev), collapse = ""), paste(c("$",totalrev), collapse = ""))
+pie(c(top10rev, totalrev), labels = lbls, main = "Top 10 Sales Revenue Out of Total Sales Revenue", col = rainbow(2))
+legend("bottomleft", c("Top 10 Product Revenue", "Total Product Revenue"), cex = 0.8, fill = rainbow(2))
+# waffle chart
+#vals <- c(top10rev, totalrev)
+#val_names <- sprintf("%s (%s)", c("Top 10 Product Revenue", "Total Product Revenue"), scales::percent(round(vals/sum(vals), 2)))
+#names(vals) <- val_names
+#waffle(vals) + scale_fill_tableau(name=NULL)
+
+# RESULTS:
+# We observe that the top 4 goods account for 4.53% of all revenue.
+# The top 10 goods account for 8.23% of all revenue.
+
+
+# Brian
+# QUESTION 5: Demand elasticity
+# Use entire dataset (transaction level)
+lm.1 <- lm(Quantity ~ UnitPrice, data = df)
+summary(lm.1)
+
+
+# PART A
+sd(df$UnitPrice)
+hist(df$UnitPrice, breaks = 1000)
+outlier <- boxplot(df$UnitPrice)$out
+length(outlier)
+
+# RESULTS:
+# We observe that standard deviation is large compared to the majority of unit price.
+# From the histogram we know it is simply due to extreme skew.
+# This implies there is no good price variation to estimate elasticities on consumer level.
+# The variation is too large to get statistical significance for the elasticity coefficient.
+# If we delete outliers, we get the following:
+temp <- temp[-which(temp$UnitPrice %in% outlier),]
+sd(temp$UnitPrice)
+hist(temp$UnitPrice, breaks = 50)
+boxplot(temp$UnitPrice)
+lm.1.2 <- lm(Quantity ~ UnitPrice, data = temp)
+summary(lm.1.2) # Observe that now own price elasticity is significant and much negative.
+
+# So what if we use price and quantity by each good instead of individual transactions?
+# Use sum(Quantity) and mean(Price)
+byGood <- df %>% group_by(StockCode) %>% summarise_at(vars(Quantity, UnitPrice), funs(sum, mean))
+plot(log(byGood$UnitPrice_mean), log(byGood$Quantity_sum))
+byGood <- byGood[-which(log(byGood$Quantity_sum) %in% c(NaN, -Inf, NA)),]
+lm.1.3 <- lm(log(byGood$Quantity_sum) ~ log(byGood$UnitPrice_mean))
+summary(lm.1.3)
+abline(lm.1.3, col = "red")
+
+# RESULTS:
+# We observe that taking the log Quantity and log mean price for each good show a good fit.
+# By capturing the effects of special transactions like returns, we are able to see a better fit.
+# Note that the elasticity is significant. For this, we have sufficient price variation.
+
+
+# PART B: Elasticity by low and high revenue customers (transaction level)
+sortdf <- df[order(df$Revenue),]
+lowcond <- which(sortdf$Revenue < median(sortdf$Revenue))
+lowdf <- sortdf[lowcond,]
+highdf <- sortdf[-lowcond,]
+# low revenue customers
+lm.2 <- lm(Quantity ~ UnitPrice, data = lowdf)
+summary(lm.2)
+# high revenue customers
+lm.2.2 <- lm(Quantity ~ UnitPrice, data = highdf)
+summary(lm.2.2)
+
+# RESULTS:
+# We cannot say that there is a significant difference between big spenders and not big spenders.
+
+
+# Liam
+###
+#6: do customers have a lot of variation in their purchase behavior?
+###
+
+###
+#test to see which customers bought most of a particular product (na.excluded)
+###
+df2 <- data.frame(df %>% group_by(CustomerID) %>% count(StockCode))
+df2 <- na.exclude(df2)
+df2 <- df2[with(df2,order(-n)),]
+
+df2 <- df2[1:50,]
+df2
+
+###
+#test for top 10 customers by revenue
+####
+
+aggregate_customer <- aggregate(revenue ~ CustomerID, df, sum)
+
+
+aggregate_customer <- aggregate_customer[with(aggregate_customer,order(-revenue)),]
+
+
+aggregate_customer <- aggregate_customer[1:10,]
+
+
+barplot(aggregate_customer$revenue, names.arg = aggregate_customer$CustomerID, col = c("magenta", "pink", "lightblue"), xlab = "Customer ID", ylab  = "Revenue")
+
+###
+#test to see if consumers had variation in invoice orders based on country
+###
+
+df2 <- data.frame(df %>% group_by(Country) %>% count(InvoiceNo))
+
+aggregate_country <- aggregate(n ~ Country, df2, sum)
+
+#remove unspecified values
+aggregate_country <- aggregate_country[-c(37),]
+
+aggregate_country <- aggregate_country[with(aggregate_country,order(-n)),]
+
+aggregate_country <- aggregate_country[1:10,]
+
+#used logged values in second one
+barplot((aggregate_country$n), names.arg = aggregate_country$Country, col = c("magenta", "pink", "lightblue"), xlab = "Country", ylab = "Number Invoices", main = "Number Invoices by Top 10 Countries", cex.names = 0.75, cex.lab=0.75)
+
+###
+#test to see if consumers brought in more revenue by country
+###
+
+aggregate_country <- aggregate(revenue ~ Country, df, sum)
+
+#remove unspecified values
+aggregate_country <- aggregate_country[-c(37),]
+
+aggregate_country <- aggregate_country[with(aggregate_country,order(-revenue)),]
+
+aggregate_country <- aggregate_country[1:10,]
+
+#used logged values for second plot
+barplot((aggregate_country$revenue), names.arg = aggregate_country$Country, col = c("magenta", "pink", "lightblue"), xlab = "Country", ylab = "Total Revenue", main = "Total Revenue by Top 10 Countries", cex.names = 0.75, cex.lab=0.75)
+
+###
+#see if customers bought same product over again
+###
+
+
+#stock code by customer by quarter
+df$InvoiceDate <- as.POSIXct(df$InvoiceDate, format ="%m/%d/%Y")
+
+df3 <- data.frame(df %>%
+                    mutate(quarter = quarter(InvoiceDate)) %>%
+                    count(CustomerID, StockCode, quarter, InvoiceNo) %>%
+                    group_by(CustomerID, StockCode, quarter) %>%
+                    summarize(RecurringPurchasing = sum(n)))
+
+percentrep <- sum(df3$RecurringPurchasing > 1)/sum(df3$RecurringPurchasing)*100
+
+
+#pie chart for quarterly repurchase
+percentrep <- c(.11, .89)
+
+pie(percentrep, labels = c("11%", "89%"), col = c("pink", "lightblue"), main = "Quarterly Repurchase vs Non Repurchase")
+legend(-0.8,-0.8, c("Repurchase","No Repurchase"), fill = c("pink", "lightblue"))
+
+#yearly repurchase rate
+df3 <- data.frame(df %>%
+                    mutate(year = year(InvoiceDate)) %>%
+                    count(CustomerID, StockCode, year, InvoiceNo) %>%
+                    group_by(CustomerID, StockCode, year) %>%
+                    summarize(RecurringPurchasing = sum(n)))
+
+
+
+
+#pie chart for yearly repurchase
+percentrep <- sum(df3$RecurringPurchasing > 1)/sum(df3$RecurringPurchasing)*100
+percentrep <- c(.13,.87)
+
+pie(percentrep, labels = c("13%", "87%"), col = c("pink", "lightblue"), main = "Yearly Repurchase vs Non Repurchase")
+legend(-0.8,-0.8, c("Repurchase","No Repurchase"), fill = c("pink", "lightblue"))
+
+
+
+
+# Brian
+# Extra 1: Decision Tree
+fit <- rpart(Quantity ~ UnitPrice, data=df, method="anova",cp=0.0005)
+fancyRpartPlot(fit, main="Quantity Sold",palettes=c("Greens","Reds"))
+
+# assign stores into groups of leaves
+df$leaf = fit$where 
+leaves <- unique(df$leaf)
+
+# first leaf
+lm.3 <- glm(log(Quantity)~log(UnitPrice)*Country, data=subset(df, leaf==leaves[1]))
+summary(lm.3)
+
+temp <- df
+temp <- temp[-which(log(temp$Quantity) %in% c(NaN, -Inf, NA)),]
+temp <- temp[-which(log(temp$UnitPrice) %in% c(NaN, -Inf, NA)),]
+# second leaf
+lm.3.2 <- glm(log(Quantity)~log(UnitPrice)*Country, data=subset(temp, leaf==leaves[2]))
+summary(lm.3.2)
+
+# RESULTS:
+# We can extract some useful information in the first leaf with lower unit price and quanity, due to less variaiton.
+# But in the leaf with higher price, quanity, and variation, not so much.
+
+
+# Liam
+# Extra 2: Correlations in goods sold
+
+df <- read.csv("online_retail.csv")
+retail <- df
+
+
+df <- df %>% mutate(Description = as.factor(Description))
+df  <- df %>% mutate(Country = as.factor(Country))
+
+#date vector
+Date <- as.POSIXct(df$InvoiceDate, format ="%m/%d/%Y")
+
+#Convert and edit InvoiceNo into numeric
+InvoiceNo <- as.numeric(df$InvoiceNo)
+
+
+#get a glimpse of your data
+glimpse(df)
+
+
+transactionData <- ddply(df,c("InvoiceNo","Date"),
+                         function(df)paste(df$Description,
+                                          collapse = ","))
+
+#write and load csv for transactiondata
+write.csv(transactionData,"~/Desktop/market_basket_transactions.csv", quote = FALSE, row.names = FALSE)
+
+
+tr <- read.transactions('~/Desktop/market_basket_transactions.csv', format = 'basket', sep=',')
+trans = as(tr, "transactions")
+
+association.rules <- apriori(tr, parameter = list(supp=0.001, conf=0.8,maxlen=10))
+association.rules
+inspect <- as.vector(inspect(association.rules[1:5]))
+
+rules5 <- association.rules[1:5]
+rules10 <- association.rules[1:10]
+
+#graph
+plot(rules5, method = "graph",  engine = "htmlwidget")
+plot(rules10, method = "graph", engine = "htmlwidget")
+
+#graph 
+subRules<-association.rules[quality(association.rules)$confidence>0.4]
+plot(subRules)
+
+
+

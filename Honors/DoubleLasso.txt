@@ -1,0 +1,294 @@
+
+Call:
+rlasso.formula(formula = formula, data = data, post = post, intercept = intercept, 
+    model = model, control = control)
+
+Post-Lasso Estimation:  FALSE 
+
+Total number of variables: 206
+Number of selected variables: 138 
+
+Residuals: 
+     Min       1Q   Median       3Q      Max 
+-3.55038 -0.12978  0.02313  0.15978  1.28624 
+
+            Estimate
+(Intercept)    1.427
+SPORDER       -0.082
+PWGTP          0.000
+AGEP           0.001
+CIT2          -0.009
+CIT4           0.014
+COW2          -0.015
+COW5           0.096
+COW6          -0.066
+COW7          -0.017
+COW8          -0.144
+DEAR2          0.000
+DEYE2          0.011
+DOUT2          0.001
+DPHY2          0.017
+DRAT2          0.003
+DRATX1         0.011
+DREM2          0.034
+ENG1           0.006
+ENG2          -0.028
+ENG3          -0.060
+ENG4          -0.063
+FER1           0.007
+GCL1           0.044
+GCL2           0.066
+GCR2           0.007
+HINS12        -0.055
+HINS22         0.015
+HINS32        -0.018
+HINS42         0.085
+HINS52         0.017
+HINS62         0.027
+HINS72         0.009
+INTP           0.000
+MAR2          -0.001
+MAR4          -0.024
+MARHM2         0.005
+MARHT3        -0.005
+MIG2          -0.021
+MIG3          -0.008
+NWAB2         -0.014
+NWAV5          0.019
+NWLA3          0.005
+NWLK3          0.009
+NWRE2          0.009
+OIP            0.000
+PAP            0.000
+RELP01        -0.114
+RELP02        -0.162
+RELP03        -0.153
+RELP04        -0.164
+RELP05        -0.149
+RELP06        -0.145
+RELP07        -0.158
+RELP08        -0.162
+RELP09        -0.168
+RELP10        -0.146
+RELP11        -0.136
+RELP12        -0.139
+RELP13        -0.136
+RELP15        -0.145
+RELP17        -0.170
+RETP           0.000
+SCH2          -0.018
+SCHG15        -0.018
+SCHG16        -0.015
+SCHL04        -0.007
+SCHL05        -0.018
+SCHL06        -0.010
+SCHL07        -0.007
+SCHL08        -0.017
+SCHL09        -0.019
+SCHL10        -0.019
+SCHL11        -0.003
+SCHL12        -0.023
+SCHL13        -0.035
+SCHL14        -0.032
+SCHL15        -0.016
+SCHL17        -0.015
+SCHL18         0.028
+SCHL19         0.044
+SCHL20         0.067
+SCHL21         0.005
+SCHL22         0.055
+SCHL24         0.072
+SEMP           0.000
+SEX2          -0.088
+SSIP           0.000
+SSP            0.000
+WAGP           0.000
+WKHP           0.007
+WKW2          -0.048
+WKW3          -0.093
+WKW4          -0.189
+WKW5          -0.295
+WKW6          -0.402
+WRK1          -0.009
+WRK2          -0.007
+ANC2           0.009
+ANC3          -0.003
+ANC4          -0.005
+DECADE3        0.011
+DECADE4        0.006
+DECADE5        0.002
+DECADE7       -0.010
+DECADE8       -0.024
+DIS2           0.016
+DRIVESP1       0.004
+DRIVESP2      -0.014
+DRIVESP3      -0.008
+DRIVESP4      -0.001
+ESR4          -0.047
+HICOV2        -0.034
+MSP2          -0.012
+MSP3          -0.014
+MSP4          -0.007
+MSP5          -0.003
+OC0            0.005
+PAOC1          0.017
+PAOC2         -0.010
+PAOC3         -0.003
+PRIVCOV2      -0.033
+PUBCOV2        0.000
+RACWHT1        0.014
+RC0            0.000
+SCIENGP1       0.020
+SCIENGRLP1     0.193
+SCIENGRLP2     0.119
+SFN1          -0.004
+SFN2           0.019
+VPS01         -0.007
+VPS02          0.019
+VPS04          0.017
+VPS12          0.007
+VPS13         -0.001
+WAOB3         -0.015
+WAOB4          0.021
+WAOB5          0.009
+WAOB6         -0.025
+
+Residual standard error: 0.2403
+Multiple R-squared:  0.8511
+Adjusted R-squared:  0.8511[1] "log(IncomePovertyRatio)~SPORDER+PWGTP+AGEP+CIT+COW+DDRS+DEAR+DEYE+DOUT+DPHY+DRAT+DRATX+DREM+ENG+FER+GCL+GCM+GCR+HINS1+HINS2+HINS3+HINS4+HINS5+HINS6+HINS7+INTP+LANX+MAR+MARHD+MARHM+MARHT+MARHW+MARHYP+MIG+NWAB+NWAV+NWLA+NWLK+NWRE+OIP+PAP+RELP+RETP+SCH+SCHG+SCHL+SEMP+SEX+SSIP+SSP+WAGP+WKHP+WKW+WRK+ANC+DECADE+DIS+DRIVESP+ESR+HICOV+MSP+NATIVITY+OC+PAOC+PRIVCOV+PUBCOV+QTRBIR+RACWHT+RC+SCIENGP+SCIENGRLP+SFN+VPS+WAOB"
+[1] "log(IncomePovertyRatio)~SPORDER+PWGTP+AGEP+CIT+COW+DDRS+DEAR+DEYE+DOUT+DPHY+DRAT+DRATX+DREM+ENG+FER+GCL+GCM+GCR+HINS1+HINS2+HINS3+HINS4+HINS5+HINS6+HINS7+INTP+LANX+MAR+MARHD+MARHM+MARHT+MARHW+MARHYP+MIG+NWAB+NWAV+NWLA+NWLK+NWRE+OIP+PAP+RELP+RETP+SCH+SCHG+SCHL+SEMP+SEX+SSIP+SSP+WAGP+WKHP+WKW+WRK+ANC+DECADE+DIS+DRIVESP+ESR+HICOV+MSP+NATIVITY+OC+PAOC+PRIVCOV+PUBCOV+QTRBIR+RACWHT+RC+SCIENGP+SCIENGRLP+SFN+VPS+WAOB"
+-03    8.787  < 2e-16 ***
+RELP11TRUE                        3.564e-03  5.972e-03    0.597 0.550653    
+RELP12TRUE                       -1.483e-02  3.954e-03   -3.750 0.000177 ***
+RELP17TRUE                       -2.441e-01  6.466e-03  -37.746  < 2e-16 ***
+SCHG09TRUE                       -4.555e-02  5.340e-02   -0.853 0.393645    
+SCHG10TRUE                        3.846e-02  4.458e-02    0.863 0.388309    
+SCHG11TRUE                       -6.926e-02  4.527e-02   -1.530 0.126008    
+SCHG12TRUE                       -1.217e-01  3.392e-02   -3.587 0.000335 ***
+SCHG13TRUE                       -8.973e-02  2.829e-02   -3.172 0.001514 ** 
+SCHG14TRUE                       -5.693e-02  9.669e-03   -5.888 3.91e-09 ***
+SCHL02TRUE                               NA         NA       NA       NA    
+SCHL03TRUE                               NA         NA       NA       NA    
+SCHL04TRUE                               NA         NA       NA       NA    
+SCHL05TRUE                               NA         NA       NA       NA    
+SCHL06TRUE                               NA         NA       NA       NA    
+SCHL07TRUE                               NA         NA       NA       NA    
+SCHL08TRUE                               NA         NA       NA       NA    
+SCHL09TRUE                               NA         NA       NA       NA    
+SCHL12TRUE                               NA         NA       NA       NA    
+SEX2TRUE                         -7.681e-02  7.047e-04 -109.000  < 2e-16 ***
+WKHP                              8.199e-03  2.797e-05  293.085  < 2e-16 ***
+WRK1TRUE                          4.122e-03  1.212e-03    3.400 0.000673 ***
+WRK2TRUE                         -1.164e-01  1.729e-02   -6.735 1.64e-11 ***
+ANC2TRUE                          2.191e-02  6.920e-04   31.664  < 2e-16 ***
+DECADE1TRUE                       3.006e-02  1.842e-02    1.632 0.102732    
+DECADE8TRUE                      -1.722e-02  2.152e-03   -8.001 1.24e-15 ***
+DRIVESP1TRUE                      2.153e-02  5.556e-03    3.875 0.000107 ***
+DRIVESP6TRUE                      1.328e-02  9.287e-03    1.430 0.152606    
+MSP2TRUE                          1.088e-02  1.785e-03    6.095 1.10e-09 ***
+PRIVCOV2TRUE                     -6.696e-02  1.778e-03  -37.669  < 2e-16 ***
+SFN2TRUE                          1.676e-01  1.492e-02   11.236  < 2e-16 ***
+SFN3TRUE                          2.132e-01  8.539e-02    2.497 0.012522 *  
+VPS03TRUE                        -4.845e-03  1.998e-02   -0.243 0.808365    
+VPS07TRUE                         2.379e-02  4.678e-02    0.508 0.611103    
+VPS09TRUE                        -4.589e-03  1.243e-02   -0.369 0.712030    
+VPS10TRUE                        -1.279e-01  1.045e-01   -1.224 0.221110    
+VPS11TRUE                         3.359e-02  2.906e-02    1.156 0.247750    
+VPS13TRUE                        -2.367e-02  7.543e-03   -3.138 0.001703 ** 
+VPS14TRUE                        -2.093e-02  5.342e-02   -0.392 0.695174    
+WAOB4TRUE                         5.453e-02  2.560e-03   21.298  < 2e-16 ***
+WAOB8TRUE                        -2.753e-04  8.624e-03   -0.032 0.974535    
+SPORDER                          -1.495e-01  4.681e-04 -319.454  < 2e-16 ***
+PWGTP                             4.672e-05  3.842e-06   12.159  < 2e-16 ***
+AGEP                              9.258e-04  4.740e-05   19.531  < 2e-16 ***
+CIT2TRUE                         -1.984e-02  4.231e-03   -4.690 2.74e-06 ***
+CIT4TRUE                          7.488e-03  2.450e-03    3.057 0.002237 ** 
+COW5TRUE                          1.178e-01  1.792e-03   65.733  < 2e-16 ***
+COW7TRUE                         -1.251e-02  1.473e-03   -8.495  < 2e-16 ***
+COW8TRUE                         -1.698e-01  6.488e-03  -26.166  < 2e-16 ***
+DRAT3TRUE                         4.812e-03  5.587e-03    0.861 0.389101    
+DRATX2TRUE                       -6.445e-03  1.632e-03   -3.950 7.82e-05 ***
+ENG1TRUE                          5.259e-02  1.662e-03   31.635  < 2e-16 ***
+GCL1TRUE                          6.728e-02  2.314e-03   29.078  < 2e-16 ***
+GCL2TRUE                          8.285e-02  1.388e-03   59.686  < 2e-16 ***
+HINS22TRUE                        1.695e-02  1.401e-03   12.102  < 2e-16 ***
+HINS32TRUE                       -6.190e-02  2.518e-03  -24.585  < 2e-16 ***
+INTP                              2.453e-06  1.715e-08  142.986  < 2e-16 ***
+MARHM2TRUE                               NA         NA       NA       NA    
+MARHT2TRUE                       -9.892e-03  8.235e-04  -12.012  < 2e-16 ***
+MARHYP                            3.351e-04  3.718e-05    9.012  < 2e-16 ***
+MIG2TRUE                         -4.857e-02  5.181e-03   -9.374  < 2e-16 ***
+NWAB3TRUE                         1.857e-02  3.022e-03    6.144 8.06e-10 ***
+NWLA2TRUE                        -1.437e-02  2.890e-03   -4.972 6.63e-07 ***
+OIP                               6.470e-06  1.042e-07   62.122  < 2e-16 ***
+PAP                               1.798e-06  8.907e-07    2.019 0.043523 *  
+RELP02TRUE                       -7.237e-02  2.135e-03  -33.890  < 2e-16 ***
+RELP04TRUE                       -5.761e-02  8.824e-03   -6.528 6.66e-11 ***
+RELP05TRUE                       -3.839e-02  4.325e-03   -8.875  < 2e-16 ***
+RELP09TRUE                        9.938e-02  3.768e-03   26.373  < 2e-16 ***
+RELP10TRUE                        3.976e-02  4.319e-03    9.205  < 2e-16 ***
+RELP13TRUE                       -1.947e-02  2.347e-03   -8.295  < 2e-16 ***
+RELP15TRUE                        1.461e-02  4.277e-03    3.415 0.000637 ***
+RETP                              5.420e-06  3.767e-08  143.853  < 2e-16 ***
+SCH3TRUE                          7.275e-03  2.723e-03    2.672 0.007547 ** 
+SCHL11TRUE                               NA         NA       NA       NA    
+SCHL14TRUE                               NA         NA       NA       NA    
+SCHL16TRUE                               NA         NA       NA       NA    
+SCHL20TRUE                               NA         NA       NA       NA    
+SCHL21TRUE                               NA         NA       NA       NA    
+SCHL22TRUE                               NA         NA       NA       NA    
+SCHL23TRUE                               NA         NA       NA       NA    
+SCHL24TRUE                               NA         NA       NA       NA    
+SEMP                              5.536e-06  1.325e-08  417.878  < 2e-16 ***
+SSP                               7.246e-06  9.041e-08   80.142  < 2e-16 ***
+WAGP                              5.789e-06  4.648e-09 1245.439  < 2e-16 ***
+WKW5TRUE                         -2.518e-01  2.265e-03 -111.165  < 2e-16 ***
+ANC8TRUE                                 NA         NA       NA       NA    
+DECADE4TRUE                       6.661e-03  2.361e-03    2.822 0.004772 ** 
+DECADE5TRUE                       4.327e-03  1.812e-03    2.388 0.016946 *  
+DIS2TRUE                          4.335e-02  1.296e-03   33.445  < 2e-16 ***
+DRIVESP2TRUE                     -7.444e-03  5.651e-03   -1.317 0.187747    
+DRIVESP3TRUE                      2.785e-05  6.060e-03    0.005 0.996333    
+DRIVESP4TRUE                      2.988e-03  6.837e-03    0.437 0.662092    
+DRIVESP5TRUE                             NA         NA       NA       NA    
+ESR4TRUE                         -6.804e-02  4.444e-03  -15.311  < 2e-16 ***
+NATIVITY2TRUE                            NA         NA       NA       NA    
+OC0TRUE                                  NA         NA       NA       NA    
+PAOC1TRUE                         3.482e-02  1.734e-03   20.080  < 2e-16 ***
+PAOC2TRUE                        -5.342e-03  1.046e-03   -5.107 3.28e-07 ***
+PUBCOV2TRUE                       3.067e-02  2.273e-03   13.489  < 2e-16 ***
+RACWHT1TRUE                       2.349e-02  9.211e-04   25.500  < 2e-16 ***
+RC0TRUE                                  NA         NA       NA       NA    
+SCIENGP1TRUE                      8.244e-02  8.774e-04   93.960  < 2e-16 ***
+SCIENGRLP1TRUE                           NA         NA       NA       NA    
+VPS02TRUE                         3.891e-02  3.360e-03   11.582  < 2e-16 ***
+VPS04TRUE                         2.468e-02  2.795e-03    8.831  < 2e-16 ***
+VPS12TRUE                         8.285e-03  2.785e-03    2.975 0.002933 ** 
+WAOB3TRUE                        -1.562e-02  2.567e-03   -6.087 1.15e-09 ***
+WAOB5TRUE                         2.183e-02  2.680e-03    8.145 3.79e-16 ***
+WAOB7TRUE                         1.428e-02  5.061e-03    2.822 0.004780 ** 
+SameResidenceWorkplaceTRUE:JWMNP  3.311e-04  2.744e-04    1.206 0.227650    
+JWMNP:JWTR02                     -4.410e-04  7.508e-05   -5.874 4.25e-09 ***
+JWMNP:JWTR03                      8.005e-04  6.095e-04    1.313 0.189060    
+JWMNP:JWTR04                     -4.753e-04  1.025e-04   -4.635 3.57e-06 ***
+JWMNP:JWTR05                     -3.391e-04  1.119e-04   -3.030 0.002445 ** 
+JWMNP:JWTR06                      8.330e-05  3.590e-04    0.232 0.816521    
+JWMNP:JWTR07                      2.978e-04  4.145e-04    0.718 0.472501    
+JWMNP:JWTR08                     -2.937e-04  3.706e-04   -0.792 0.428157    
+JWMNP:JWTR09                     -7.692e-04  2.617e-04   -2.940 0.003284 ** 
+JWMNP:JWTR10                     -6.839e-04  1.465e-04   -4.669 3.03e-06 ***
+JWMNP:JWTR12                     -6.862e-04  6.990e-05   -9.816  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.256 on 781242 degrees of freedom
+Multiple R-squared:  0.8311,	Adjusted R-squared:  0.831 
+F-statistic: 3.05e+04 on 126 and 781242 DF,  p-value: < 2.2e-16
+
+
+MSE
+[1] 0.06549343
+
+Test R-Squared
+         [,1]
+[1,] 0.830204
